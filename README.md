@@ -28,7 +28,7 @@ The objective of the project is to classify the data based on whether the Fire A
 
 ## 2. Dataset
 ### 2.1 Data Display and Information
-![Data info](photos/data_info.png)
+![Data info](photos/data_info.jpg)
 
 Important information from the image:
 - There are 12 attributes and one target variable.
@@ -82,7 +82,7 @@ NearMiss is an undersampling method that aims to balance the class distribution 
 
 ### 3 Classification
 #### 3.1 Train-Test Split
-The dataset was divided in such a way that 30% of the data was used for testing, while the remaining portion was used for training. This resulted in 59,729 rows in the training set and 25,599 rows in the test set.
+The dataset was divided in such a way that 30% of the data was used for testing, while the remaining portion was used for training.
 
 #### 3.2 Data Scaling
 Data scaling is a preprocessing step that aims to bring all features to a similar scaled value. For this project, the MinMaxScaler() function was used. The working principle is as follows:
@@ -91,7 +91,7 @@ scaled_value = (value - min_value) / (max_value - min_value)
 This formula transforms the original attribute values to a range between 0 and 1, where the minimum becomes 0 and the maximum becomes 1. It operates independently on each attribute, scaling them individually based on their minimum and maximum values. This ensures that all attributes are on a similar scale and prevents any particular attribute from dominating the analysis based on its original magnitude.
 
 #### 3.3 Used Algorithms
-Three machine learning classification algorithms were employed in this project:
+Four machine learning classification algorithms were employed in this project:
 1. Logistic Regression
 2. K-Nearest Neighbors (KNN)
 3. Decision Tree
@@ -110,7 +110,7 @@ Three machine learning classification algorithms were employed in this project:
 | RandomForestClassifier  |   [4461, 0]     |  100.0   |  100.0  |   100.0   |  100.0 |  0.814029  |
 |                         |   [0, 4461]     |          |         |           |        |            |
 
-Based on these results, both KNeighborsClassifier and DecisionTreeClassifier achieved excellent performance with very high accuracy, precision, and recall scores. LogisticRegression also performed well but with slightly lower accuracy compared to the other two models. The RandomForestClassifier exhibited the best performance. It is important to note that both RFC and KNN (after tuning) had 0 false negatives, meaning that there were no cases where the alarm should have been triggered but wasn't.
+Based on these results, both KNeighborsClassifier and DecisionTreeClassifier achieved excellent performance with very high accuracy, precision, and recall scores. LogisticRegression also performed well but with slightly lower accuracy compared to the other two models. The RandomForestClassifier exhibited the best performance. It is important to note that all algorithms (after tuning) had 0 false negatives, meaning that there were no cases where the alarm should have been triggered but wasn't.
 
 ### 4.2 Hyperparameter Tuning with Cross-Validation
 
@@ -153,33 +153,33 @@ Lasso (Least Absolute Shrinkage and Selection Operator) is a linear modeling tec
 
 |                     Name                     | Confusion Matrix | Accuracy | F score | Precision | Recall |
 |----------------------------------------------|------------------|----------|---------|-----------|--------|
-|    KNeighborsClassifier                       | [4459, 2]        | 99.98    | 99.98   | 99.96     | 100.0  |
+|    KNeighborsClassifier                       | [4459, 2]       | 99.98    | 99.98   | 99.96     | 100.0  |
 |                                               | [0, 4461]       |          |         |           |        |
-|    LogisticRegression                         | [4455, 6]        | 99.93    | 99.93   | 99.87     | 100.0  |
+|    LogisticRegression                         | [4455, 6]       | 99.93    | 99.93   | 99.87     | 100.0  |
 |                                               | [0, 4461]       |          |         |           |        |
-|    DecisionTreeClassifier                     | [4461, 0]        | 100.0    | 100.0   | 100.0     | 100.0  |
+|    DecisionTreeClassifier                     | [4461, 0]       | 100.0    | 100.0   | 100.0     | 100.0  |
 |                                               | [0, 4461]       |          |         |           |        |
 
 **PCA:**
 
 |                     Name                     | Confusion Matrix | Accuracy | F score | Precision | Recall |
 |----------------------------------------------|------------------|----------|---------|-----------|--------|
-|    KNeighborsClassifier                       | [4460, 1]        | 99.99    | 99.99   | 99.98     | 100.0  |
+|    KNeighborsClassifier                       | [4460, 1]       | 99.99    | 99.99   | 99.98     | 100.0  |
 |                                               | [0, 4461]       |          |         |           |        |
-|    LogisticRegression                         | [4453, 8]        | 99.91    | 99.91   | 99.82     | 100.0  |
+|    LogisticRegression                         | [4453, 8]       | 99.91    | 99.91   | 99.82     | 100.0  |
 |                                               | [0, 4461]       |          |         |           |        |
-|    DecisionTreeClassifier                     | [4461, 0]        | 100.0    | 100.0   | 100.0     | 100.0  |
+|    DecisionTreeClassifier                     | [4461, 0]       | 100.0    | 100.0   | 100.0     | 100.0  |
 |                                               | [0, 4461]       |          |         |           |        |
 
 **Lasso:**
 
 |                     Name                     | Confusion Matrix | Accuracy | F score | Precision | Recall |
 |----------------------------------------------|------------------|----------|---------|-----------|--------|
-|    KNeighborsClassifier                       | [4460, 1]        | 99.99    | 99.99   | 99.98     | 100.0  |
+|    KNeighborsClassifier                       | [4460, 1]       | 99.99    | 99.99   | 99.98     | 100.0  |
 |                                               | [0, 4461]       |          |         |           |        |
-|    LogisticRegression                         | [4450, 11]       | 99.88    | 99.88   | 99.75     | 100.0  |
+|    LogisticRegression                         | [4450, 11]      | 99.88    | 99.88   | 99.75     | 100.0  |
 |                                               | [0, 4461]       |          |         |           |        |
-|    DecisionTreeClassifier                     | [4461, 0]        | 100.0    | 100.0   | 100.0     | 100.0  |
+|    DecisionTreeClassifier                     | [4461, 0]       | 100.0    | 100.0   | 100.0     | 100.0  |
 |                                               | [0, 4461]       |          |         |           |        |
 
 
