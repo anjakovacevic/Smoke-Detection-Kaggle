@@ -96,25 +96,25 @@ NearMiss is an undersampling method that aims to balance the class distribution 
 </table>
 
 
-### 3 Classification
-#### 3.1 Train-Test Split
+## 3 Classification
+### 3.1 Train-Test Split
 The dataset was divided in such a way that 30% of the data was used for testing, while the remaining portion was used for training.
 
-#### 3.2 Data Scaling
+### 3.2 Data Scaling
 Data scaling is a preprocessing step that aims to bring all features to a similar scaled value. For this project, the MinMaxScaler() function was used. The working principle is as follows:
 scaled_value = (value - min_value) / (max_value - min_value)
 
 This formula transforms the original attribute values to a range between 0 and 1, where the minimum becomes 0 and the maximum becomes 1. It operates independently on each attribute, scaling them individually based on their minimum and maximum values. This ensures that all attributes are on a similar scale and prevents any particular attribute from dominating the analysis based on its original magnitude.
 
-#### 3.3 Used Algorithms
+### 3.3 Used Algorithms
 Four machine learning classification algorithms were employed in this project:
 1. Logistic Regression
 2. K-Nearest Neighbors (KNN)
 3. Decision Tree
 4. Random Forest Classifier
 
-### 4 Experiments and Results
-#### 4.1 Results of Basic Algorithms
+## 4 Experiments and Results
+### 4.1 Results of Basic Algorithms
 |       Name              | Confusion Matrix | Accuracy | F Score | Precision | Recall | Time Taken |
 |-------------------------|-----------------|----------|---------|-----------|--------|------------|
 | KNeighborsClassifier    |   [4461, 0]     |  100.0   |  100.0  |   100.0   |  100.0 |  0.244737  |
