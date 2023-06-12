@@ -1,5 +1,7 @@
 # Smoke-Detection-Kaggle
-# Introduction
+## 1. Introduction
+
+Find dataset here -> https://www.kaggle.com/datasets/deepcontractor/smoke-detection-dataset
 
 The Fire Alarm System is designed to alert individuals in the event of a fire or other emergency situations related to fire or general emergencies. It can detect smoke, fire, carbon monoxide, and other critical situations. The alarms can be automatically triggered by smoke detectors and heat detectors or manually activated through alarm activation devices such as manual call points or manual stations.
 
