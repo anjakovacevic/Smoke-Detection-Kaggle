@@ -28,7 +28,21 @@ The objective of the project is to classify the data based on whether the Fire A
 
 ## 2. Dataset
 ### 2.1 Data Display and Information
-![Data info](photos/data_info.jpg)
+| Index | Column         | Non-Null Count | Dtype    |
+|-------|----------------|----------------|----------|
+| 0     | Temperature[C] | 62630          | float64  |
+| 1     | Humidity[%]    | 62630          | float64  |
+| 2     | TVOC[ppb]      | 62630          | int64    |
+| 3     | eCO2[ppm]      | 62630          | int64    |
+| 4     | Raw H2         | 62630          | int64    |
+| 5     | Raw Ethanol    | 62630          | int64    |
+| 6     | Pressure[hPa]  | 62630          | float64  |
+| 7     | PM1.0          | 62630          | float64  |
+| 8     | PM2.5          | 62630          | float64  |
+| 9     | NC0.5          | 62630          | float64  |
+| 10    | NC1.0          | 62630          | float64  |
+| 11    | NC2.5          | 62630          | float64  |
+| 12    | Fire Alarm     | 62630          | int64    |
 
 Important information from the image:
 - There are 12 attributes and one target variable.
