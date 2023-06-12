@@ -66,6 +66,13 @@ Imbalanced datasets can pose challenges in machine learning models, as they tend
 
 NearMiss is an undersampling method that aims to balance the class distribution by selectively removing samples from the majority class based on their proximity to the minority class. NearMiss selects samples from the majority class that are closest to the minority class instances, ensuring a more balanced dataset for training a classification model.
 ![Data Distributions before and after balancing](photos/before_balansing.png)
+<table>
+  <tr>
+    <td><img src="photos/before_balansing.png" alt="Photo 1" width="400" /></td>
+    <td><img src="photos/after_balansing.png" alt="Photo 2" width="400" /></td>
+  </tr>
+</table>
+
 
 ### 3 Classification
 #### 3.1 Train-Test Split
