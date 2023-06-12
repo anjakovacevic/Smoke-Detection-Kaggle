@@ -28,6 +28,7 @@ The objective of the project is to classify the data based on whether the Fire A
 
 ## 2. Dataset
 ### 2.1 Data Display and Information
+![Data info](photos/data_info.png)
 
 Important information from the image:
 - There are 12 attributes and one target variable.
@@ -35,7 +36,9 @@ Important information from the image:
 - There are no NULL values in any column.
 - All data types are either float or int, indicating that there is no need to adjust data types.
 
-### 2.2 Handling Anomalies
+![Data Distributions before data preprocessing](photos/before_anomalies.png)
+
+### 2.2 Handling Outliers
 The Z-score method, also known as standardization or normalization, is a technique used to transform data into a standard scale. It represents the number of standard deviations that a data point is away from the mean. It tells us how relatively close or far a data point is from the average.
 
 The formula for calculating the z-score of a data point (x) is:
@@ -48,7 +51,9 @@ Where:
 
 By standardizing data using the z-score method, you can ensure that variables with different scales and distributions are on a comparative scale. This is particularly useful in machine learning algorithms that rely on computing distances or when comparing variables with different units or ranges.
 
-It allows for the identification of anomalies as data points with z-score values that exceed a certain threshold (e.g., ±2 or ±3). In this case, a threshold value of 2.5 has been chosen. After applying this procedure, the data distributions look as follows:
+It allows for the identification of outliers as data points with z-score values that exceed a certain threshold (e.g., ±2 or ±3). In this case, a threshold value of 2.5 has been chosen. After applying this procedure, the data distributions look as follows:
+![Data Distributions after Z-score method](photos/after_anomalies.png)
+Size of the data after this is 57534.
 
 ### 2.3 Correlation Matrix
 The correlation matrix is a square matrix used to display the correlation between different variables in a dataset. Each element of the matrix represents the correlation coefficient between corresponding pairs of variables. The correlation coefficient values range between -1 and 1. A value of 1 indicates a perfect positive correlation, meaning that the variable values increase together. A value of -1 indicates a perfect negative correlation, meaning that the variable values decrease together. A value close to zero indicates a lack of correlation or a weak linear relationship between variables.
@@ -58,6 +63,7 @@ The correlation matrix helps us understand the relationships and dependencies be
 To calculate the correlation matrix, we use a statistical measure called the correlation coefficient, such as Pearson's correlation coefficient. It measures the linear relationship between two variables and ranges from -1 to 1, with 0 indicating no linear relationship.
 
 The correlation matrix shown below represents the data from the dataset after the removal of anomalies. The pairs (PM1.0, NC1.0) , (PM2.5, NC0.5), (NC0.5, NC1.0), (PM2.5, PM1.0), (PM1.0, NC0.5) and (PM2.5, NC1.0) exhibit a high positive correlation of 0.99. Based on the high correlation between PM1.0 and NC1.0, as well as between PM2.5 and NC1.0, the variables PM1.0 and PM2.5 were removed to examine the dependency without them. Additionally, it is possible to exclude NC1.0 and NC2.5, but doing so slightly reduces the accuracy of the algorithms.
+![Correlation Matrix](photos/corr_matrix.png)
 
 ### 2.4 Data Balancing
 Data balancing is a technique used to address the issue of imbalanced class distribution in a dataset. When we encounter an imbalanced distribution, it means that one class has a significantly smaller number of samples compared to the other.
@@ -65,7 +71,7 @@ Data balancing is a technique used to address the issue of imbalanced class dist
 Imbalanced datasets can pose challenges in machine learning models, as they tend to bias the model towards the majority class, leading to poor performance on the minority class. To overcome this, data balancing techniques are applied to adjust the class distribution and provide equal representation for all classes.
 
 NearMiss is an undersampling method that aims to balance the class distribution by selectively removing samples from the majority class based on their proximity to the minority class. NearMiss selects samples from the majority class that are closest to the minority class instances, ensuring a more balanced dataset for training a classification model.
-![Data Distributions before and after balancing](photos/before_balansing.png)
+
 <table>
   <tr>
     <td><img src="photos/before_balansing.png" alt="Photo 1" width="400" /></td>
